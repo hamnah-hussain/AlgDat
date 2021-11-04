@@ -12,6 +12,7 @@ public class Avsnitt122 {
         int m = Tabell.maks(a);   // finner posisjonen til største verdi
 
         System.out.println("\nStørste verdi ligger på plass " + m);
+        skrivln(a);
 
     } // main
     /*3. Lag metoden public static void bytt(char[] c, int i, int j). Den skal bytte om innholdet i posisjon i og j
@@ -28,6 +29,43 @@ public class Avsnitt122 {
     linje, en blank mellom hvert tall. Ikke mellomrom og ikke linjeskift etter siste verdi. Legg begge metodene i
     samleklassen Tabell.*/
 
+    public static void skriv(int[] a, int fra, int til){
+        if (fra < 0 || til > a.length || fra >= til)
+        {
+            throw new IllegalArgumentException("Illegalt intervall!");
+        }
+        if (til - fra > 0){
+            System.out.print(a[fra]);
+        }
+        for (int i = fra + 1; i < til; i++){
+            System.out.print(" " + a[i]);
+        }
+    }
 
+    public static void skriv(int[] a){
+        skriv(a, 0, a.length);
+    }
+
+    /*5. Lag to skrivln-metoder. De skal ha samme signatur og fungere på samme måte som de to skriv-metodene i
+    Oppgave 4 , men utskriften skal avsluttes med et linjeskift. Legg begge metodene i samleklassen Tabell.*/
+
+    public static void skrivln(int[] a, int fra, int til){
+        skriv(a,fra,til);
+        System.out.println();
+        /*if (fra < 0 || til > a.length || fra >= til)
+        {
+            throw new IllegalArgumentException("Illegalt intervall!");
+        }
+        if (til - fra > 0){
+            System.out.println(a[fra]);
+        }
+        for (int i = fra + 1; i < til; i++){
+            System.out.println(a[i]);
+        }*/
+    }
+
+    public static void skrivln(int[] a){
+        skrivln(a, 0, a.length);
+    }
 
 }

@@ -7,6 +7,21 @@ public class Tabell {
 
     private Tabell() {}
 
+    public static void fratilKontroll(int tablengde, int fra, int til)
+    {
+        if (fra < 0)                                  // fra er negativ
+            throw new ArrayIndexOutOfBoundsException
+                    ("fra(" + fra + ") er negativ!");
+
+        if (til > tablengde)                          // til er utenfor tabellen
+            throw new ArrayIndexOutOfBoundsException
+                    ("til(" + til + ") > tablengde(" + tablengde + ")");
+
+        if (fra > til)                                // fra er større enn til
+            throw new IllegalArgumentException
+                    ("fra(" + fra + ") > til(" + til + ") - illegalt intervall!");
+    }
+
     // Metoden bytt(int[] a, int i, int j)       Programkode 1.1.8 d)
 
     public static void bytt(int[] a, int i, int j)
@@ -49,10 +64,7 @@ public class Tabell {
 
     public static int maks(int[] a, int fra, int til)
     {
-        if (fra < 0 || til > a.length || fra >= til)
-        {
-            throw new IllegalArgumentException("Illegalt intervall!");
-        }
+        fratilKontroll(a.length, fra, til);
 
         int m = fra;              // indeks til største verdi i a[fra:til>
         int maksverdi = a[fra];   // største verdi i a[fra:til>
@@ -81,10 +93,7 @@ public class Tabell {
 
     public static int min(int[] a, int fra, int til)
     {
-        if (fra < 0 || til > a.length || fra >= til)
-        {
-            throw new IllegalArgumentException("Illegalt intervall!");
-        }
+        fratilKontroll(a.length, fra, til);
 
         int m = fra;              // indeks til minste verdi i a[fra:til>
         int minverdi = a[fra];   // minste verdi i a[fra:til>
@@ -104,6 +113,43 @@ public class Tabell {
     public static int min(int[] a)  // bruker hele tabellen
     {
         return min(a,0,a.length);     // kaller metoden over
+    }
+
+    //metoden for å skrive ut samme linje
+
+    public static void skriv(int[] a, int fra, int til){
+        fratilKontroll(a.length, fra, til);
+        if (til - fra > 0){
+            System.out.print(a[fra]);
+        }
+        for (int i = fra + 1; i < til; i++){
+            System.out.print(" " + a[i]);
+        }
+    }
+
+    public static void skriv(int[] a){
+        skriv(a, 0, a.length);
+    }
+
+    //metode skrive ut en linje hver
+
+    public static void skrivln(int[] a, int fra, int til){
+        skriv(a,fra,til);
+        System.out.println();
+        /*if (fra < 0 || til > a.length || fra >= til)
+        {
+            throw new IllegalArgumentException("Illegalt intervall!");
+        }
+        if (til - fra > 0){
+            System.out.println(a[fra]);
+        }
+        for (int i = fra + 1; i < til; i++){
+            System.out.println(a[i]);
+        }*/
+    }
+
+    public static void skrivln(int[] a){
+        skrivln(a, 0, a.length);
     }
 
 }
