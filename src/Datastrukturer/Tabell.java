@@ -152,4 +152,44 @@ public class Tabell {
         skrivln(a, 0, a.length);
     }
 
+    //sjekker om et lukket tabellinetrvall er lovlig []
+
+    public static void vhKontroll(int tablengde, int v, int h)
+    {
+        if (v < 0)
+            throw new ArrayIndexOutOfBoundsException("v(" + v + ") < 0");
+
+        if (h >= tablengde)
+            throw new ArrayIndexOutOfBoundsException
+                    ("h(" + h + ") >= tablengde(" + tablengde + ")");
+
+        if (v > h + 1)
+            throw new IllegalArgumentException
+                    ("v = " + v + ", h = " + h);
+    }
+
+    /*NullPointerException,  IllegalArgumentException,  IllegalStateException,
+ArrayIndexOutOfBoundsException,  StringIndexOutOfBoundsException,
+IndexOutOfBoundsException,  NoSuchElementException
+InvalidParameterException,  NumberFormatException*/ //Dette er runtime exceptions
+
+    static void rangeCheck(int arrayLength, int fromIndex, int toIndex)
+    {
+        if (fromIndex > toIndex)
+        {
+            throw new IllegalArgumentException(
+                    "fromIndex(" + fromIndex + ") > toIndex(" + toIndex + ")");
+        }
+
+        if (fromIndex < 0)
+        {
+            throw new ArrayIndexOutOfBoundsException(fromIndex);
+        }
+
+        if (toIndex > arrayLength)
+        {
+            throw new ArrayIndexOutOfBoundsException(toIndex);
+        }
+    }
+
 }
