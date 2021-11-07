@@ -7,6 +7,12 @@ public class Tabell {
 
     private Tabell() {}
 
+    public static void main(String[]args){
+        int[] a = {7,5,9,2,10,4,1,8,6,3};     // en usortert heltallstabell
+        Tabell.utvalgssortering(a);           // stigende sortering
+        Tabell.inversjoner(a);
+    }
+
     public static void fratilKontroll(int tablengde, int fra, int til)
     {
         if (fra < 0)                                  // fra er negativ
@@ -223,5 +229,113 @@ InvalidParameterException,  NumberFormatException*/ //Dette er runtime exception
         return new int[] {m,nm};      // m i posisjon 0 , nm i posisjon 1
 
     } // nestMaks
+
+    public static void snu(int[] a, int v, int h)  // snur intervallet a[v:h]
+    {
+        while (v < h) bytt(a, v++, h--);
+    }
+
+    public static void snu(int[] a, int v)  // snur fra og med v og ut tabellen
+    {
+        snu(a, v, a.length - 1);
+    }
+
+    public static void snu(int[] a)  // snur hele tabellen
+    {
+        snu(a, 0, a.length - 1);
+    }
+
+    public static boolean nestePermutasjon(int[] a)
+    {
+        int i = a.length - 2;                    // i starter nest bakerst
+        while (i >= 0 && a[i] > a[i + 1]) i--;   // går mot venstre
+        if (i < 0) return false;                 // a = {n, n-1, . . . , 2, 1}
+
+        int j = a.length - 1;                    // j starter bakerst
+        while (a[j] < a[i]) j--;                 // stopper når a[j] > a[i]
+        bytt(a,i,j); snu(a,i + 1);               // bytter og snur
+
+        return true;                             // en ny permutasjon
+    }
+
+    public static int inversjoner(int[] a)
+    {
+        int antall = 0;  // antall inversjoner
+        for (int i = 0; i < a.length - 1; i++)
+        {
+            for (int j = i + 1; j < a.length; j++)
+            {
+                if (a[i] > a[j]) antall++;  // en inversjon siden i < j
+            }
+        }
+        return antall;
+    }
+
+    public static boolean erSortert(int[] a)  // legges i samleklassen Tabell
+    {
+        for (int i = 1; i < a.length; i++)      // starter med i = 1
+            if (a[i-1] > a[i]) return false;      // en inversjon
+
+        return true;
+    }
+
+    public static void boblesortering(int[] a)
+    {
+        for (int n = a.length; n > 1; )            // n er intervallgrense
+        {
+            int byttindeks = 0;                      // hjelpevariabel
+            for (int i = 1; i < n; i++)              // går fra 1 til n
+            {
+                if (a[i - 1] > a[i])                   // sammenligner
+                {
+                    bytt(a, i - 1, i);                   // bytter
+                    byttindeks = i;                      // høyre indeks i ombyttingen
+                }
+            }
+            n = byttindeks;                          // ny intervallgrense
+        }
+    }
+
+    public static void utvalgssortering(int[] a)
+    {
+        for (int i = 0; i < a.length - 1; i++)
+            bytt(a, i, min(a, i, a.length));  // to hjelpemetoder
+    }
+
+    public static int lineærsøk(int[] a, int verdi) // legges i class Tabell
+    {
+        if (a.length == 0 || verdi > a[a.length-1])
+            return -(a.length + 1);  // verdi er større enn den største
+
+        int i = 0; for( ; a[i] < verdi; i++);  // siste verdi er vaktpost
+
+        return verdi == a[i] ? i : -(i + 1);   // sjekker innholdet i a[i]
+    }
+
+    public static int usortertsøk(int[] a, int verdi)  // tabell og søkeverdi
+    {
+        for (int i = 0; i < a.length; i++)  // går gjennom tabellen
+            if (verdi == a[i]) return i;      // verdi funnet - har indeks i
+
+        return -1;                          // verdi ikke funnet
+    }
+
+    public static void innsettingssortering(int[] a)
+    {
+        for (int i = 1; i < a.length; i++)  // starter med i = 1
+        {
+            int temp = a[i];  // hjelpevariabel
+            for (int j = i - 1; j >= 0 && temp < a[j]; j--) Tabell.bytt(a, j, j + 1);
+        }
+    }
+
+    public static void innsettingssortering(int[] a, int fra, int til)
+    {
+        for (int i = fra+1; i < til; i++)  // starter med i = 1
+        {
+            int temp = a[i];  // hjelpevariabel
+            for (int j = i - 1; j >= 0 && temp < a[j]; j--) Tabell.bytt(a, j, j + 1);
+        }
+    }
 
 }
