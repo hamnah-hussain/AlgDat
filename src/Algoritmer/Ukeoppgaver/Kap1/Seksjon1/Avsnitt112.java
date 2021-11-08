@@ -1,4 +1,4 @@
-package Algoritmer.Ukeoppgaver.Kap1.Uke34.Seksjon1;
+package Algoritmer.Ukeoppgaver.Kap1.Seksjon1;
 
 public class Avsnitt112 {
 

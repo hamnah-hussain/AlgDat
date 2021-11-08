@@ -1,4 +1,4 @@
-package Algoritmer.Ukeoppgaver.Kap1.Uke35.Seksjon2;
+package Algoritmer.Ukeoppgaver.Kap1.Seksjon2;
 
 public class Avsnitt1210 {
     /*1. Tegn et turneringstre, slik som i Figur 1.2.10 c), skriv opp de som vinneren har slått ut og finn den nest største verdien for flg. tre samlinger av tall:

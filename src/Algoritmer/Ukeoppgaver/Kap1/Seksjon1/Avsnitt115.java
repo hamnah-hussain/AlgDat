@@ -1,4 +1,4 @@
-package Algoritmer.Ukeoppgaver.Kap1.Uke34.Seksjon1;
+package Algoritmer.Ukeoppgaver.Kap1.Seksjon1;
 
 public class Avsnitt115 {
     /*1. Sjekk at Programkode 1.1.5 gir korrekte resultater.

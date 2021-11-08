@@ -1,8 +1,6 @@
-package Algoritmer.Ukeoppgaver.Kap1.Uke35.Seksjon2;
+package Algoritmer.Ukeoppgaver.Kap1.Seksjon2;
 
 import Datastrukturer.Tabell;
-
-import java.util.ArrayList;
 
 import static Datastrukturer.Tabell.maks;
 

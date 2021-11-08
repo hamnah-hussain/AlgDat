@@ -1,4 +1,4 @@
-package Algoritmer.Ukeoppgaver.Kap1.Uke36.Seksjon3;
+package Algoritmer.Ukeoppgaver.Kap1.Seksjon3;
 
 public class Avsnitt132 {
     /*1. Hvor mange inversjoner har premutasjonen 3 5 4 7 6 8 1 2 9 10 ?*/

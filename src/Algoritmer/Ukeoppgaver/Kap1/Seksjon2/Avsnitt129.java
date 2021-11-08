@@ -1,4 +1,4 @@
-package Algoritmer.Ukeoppgaver.Kap1.Uke35.Seksjon2;
+package Algoritmer.Ukeoppgaver.Kap1.Seksjon2;
 
 public class Avsnitt129 {
     /*1. Finn antall noder i Figur 1.2.8 a)? Hvor mange er bladnoder? Hvor mange er indre noder?*/

@@ -1,4 +1,4 @@
-package Algoritmer.Ukeoppgaver.Kap1.Uke34.Seksjon1;
+package Algoritmer.Ukeoppgaver.Kap1.Seksjon1;
 
 public class Avsnitt114 {
     /*1. Hvor mange grunnleggende operasjoner utfører Programkode 1.1.4 hvis tabellen a

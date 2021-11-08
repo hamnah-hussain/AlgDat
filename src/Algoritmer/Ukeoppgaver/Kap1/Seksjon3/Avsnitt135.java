@@ -1,4 +1,4 @@
-package Algoritmer.Ukeoppgaver.Kap1.Uke36.Seksjon3;
+package Algoritmer.Ukeoppgaver.Kap1.Seksjon3;
 
 import Datastrukturer.Tabell;
 

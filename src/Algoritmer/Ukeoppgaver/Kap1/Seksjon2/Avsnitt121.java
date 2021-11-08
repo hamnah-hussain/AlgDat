@@ -1,6 +1,4 @@
-package Algoritmer.Ukeoppgaver.Kap1.Uke35.Seksjon2;
-
-import java.util.Arrays;
+package Algoritmer.Ukeoppgaver.Kap1.Seksjon2;
 
 public class Avsnitt121 {
     /*1. Lag to min-metoder (metoder som finner posisjonen til den minste verdien) tilsvarende de to maks-metodene i

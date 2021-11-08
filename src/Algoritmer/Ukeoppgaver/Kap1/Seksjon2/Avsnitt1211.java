@@ -1,4 +1,4 @@
-package Algoritmer.Ukeoppgaver.Kap1.Uke35.Seksjon2;
+package Algoritmer.Ukeoppgaver.Kap1.Seksjon2;
 
 public class Avsnitt1211 {
     //https://www.cs.hioa.no/~ulfu/appolonius/kap1/2/kap12.html#1.2.1

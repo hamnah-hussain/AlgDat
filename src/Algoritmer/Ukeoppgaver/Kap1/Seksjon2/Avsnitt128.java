@@ -1,4 +1,4 @@
-package Algoritmer.Ukeoppgaver.Kap1.Uke35.Seksjon2;
+package Algoritmer.Ukeoppgaver.Kap1.Seksjon2;
 
 public class Avsnitt128 {
     /*1. Et «møte» er det samme som en sammenligning. Hvor mange sammenligninger trengs for å gjennomføre en turnering

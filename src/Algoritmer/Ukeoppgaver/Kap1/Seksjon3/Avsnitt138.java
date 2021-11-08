@@ -1,8 +1,6 @@
-package Algoritmer.Ukeoppgaver.Kap1.Uke36.Seksjon3;
+package Algoritmer.Ukeoppgaver.Kap1.Seksjon3;
 
 import Datastrukturer.Tabell;
-
-import java.util.Arrays;
 
 public class Avsnitt138 {
     /*3. Sett deg inn i metodene copyOf() og copyOfRange() fra klassen Arrays. De brukes både til å «utvide» en tabell
